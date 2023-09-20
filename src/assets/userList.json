@@ -1,0 +1,64 @@
+{
+    "userList": [
+        {
+            "userName": "username1",
+            "phoneNo": 9001001001,
+            "emailID": "user1@gmail.com"
+        },
+        {
+            "userName": "username2",
+            "phoneNo": 9002002002,
+            "emailID": "user2@gmail.com"
+        },
+        {
+            "userName": "username3",
+            "phoneNo": 9003003003,
+            "emailID": "user3@gmail.com"
+        },
+        {
+            "userName": "username4",
+            "phoneNo": 9004004004,
+            "emailID": "user4@gmail.com"
+        },
+        {
+            "userName": "username5",
+            "phoneNo": 9005005005,
+            "emailID": "user5@gmail.com"
+        },
+        {
+            "userName": "username6",
+            "phoneNo": 9006006006,
+            "emailID": "user6@gmail.com"
+        },
+        {
+            "userName": "username7",
+            "phoneNo": 9007007007,
+            "emailID": "user7@gmail.com"
+        },
+        {
+            "userName": "username8",
+            "phoneNo": 9008008008,
+            "emailID": "user8@gmail.com"
+        },
+        {
+            "userName": "username9",
+            "phoneNo": 9009009009,
+            "emailID": "user9@gmail.com"
+        },
+        {
+            "userName": "username10",
+            "phoneNo": 9010010010,
+            "emailID": "user10@gmail.com"
+        },
+        {
+            "userName": "username11",
+            "phoneNo": 9011011011,
+            "emailID": "user11@gmail.com"
+        },
+        {
+            "userName": "username12",
+            "phoneNo": 9012012012,
+            "emailID": "user12@gmail.com"
+        }
+    ]
+}

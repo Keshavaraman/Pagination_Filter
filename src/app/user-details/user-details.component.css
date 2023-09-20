@@ -1,0 +1,49 @@
+.form-group {
+    font-size: 13px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.form-group label {
+    display: inline;
+    margin-right: 20px;
+    margin-bottom: 3px;
+}
+input.form-control {
+    width: 300px;
+    display: inline;
+    font-size: 13px;
+    margin-bottom: 3px;
+}
+header {
+    font-size: 16px;
+    font-weight: 600;
+    background: rgb(63, 62, 62);
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.containers{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.containers>div{
+    border: 1px solid;
+    width: 400px;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.btn {
+    margin-top: 10px;
+    margin-right: 10px;
+    float: right;
+}
+
+img{
+    filter: invert(1);
+    float: left;
+    width: 30px;
+}

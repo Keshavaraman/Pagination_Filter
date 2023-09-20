@@ -1,0 +1,103 @@
+<main>
+    <header> User List</header>
+
+    <nav id="sidebar">
+        <div class="sidebarHeader">Filter</div>
+        <div [formGroup]="filterForm" class="filter">
+            <div class="form-group">
+            <label>UserName   <span class="add" (click)="add('userName')"> + </span></label>
+            <ng-container formArrayName="userName">
+            <ng-container *ngFor="let userName of userName.controls; let index = index">
+              <ng-container [formGroupName]='index'>
+                <select class="form-control" formControlName="operation">
+                  <option value="equal">Equal</option>
+                  <option value="notequal">Not Equal</option>
+                  <option value="contains">Contains</option>
+                  <option value="notcontains">Not Contains</option>
+              </select>
+              <input class="form-control" formControlName="value"/>
+              <span class="remove" *ngIf="index !== 0" (click)="remove('userName',index)"> - </span>
+              </ng-container>
+            </ng-container>
+          </ng-container>
+
+            </div>
+            <div class="form-group">
+                <label>Phone No <span class="add" (click)="add('phoneNo')"> + </span></label>
+                <ng-container formArrayName="phoneNo">
+                  <ng-container *ngFor="let phoneNo of phoneNo.controls; let index = index">
+                  <ng-container [formGroupName]='index'>
+                    <select class="form-control" formControlName="operation">
+                      <option value="equal">Equal</option>
+                      <option value="notequal">Not Equal</option>
+                      <option value="contains">Contains</option>
+                      <option value="notcontains">Not Contains</option>
+                  </select>
+                  <input class="form-control" formControlName="value"/>
+                  <span class="remove" *ngIf="index !== 0" (click)="remove('phoneNo',index)"> - </span>
+                  </ng-container>
+                  </ng-container>
+                </ng-container>
+                </div>
+            <div class="form-group">
+            <label>Email ID <span class="add" (click)="add('emailID')"> + </span></label>
+            <ng-container formArrayName="emailID">
+              <ng-container *ngFor="let emailID of emailID.controls; let index = index">
+                <ng-container [formGroupName]='index'>
+                  <select class="form-control" formControlName="operation">
+                    <option value="equal">Equal</option>
+                    <option value="notequal">Not Equal</option>
+                    <option value="contains">Contains</option>
+                    <option value="notcontains">Not Contains</option>
+                </select>
+                <input class="form-control" formControlName="value"/>
+                <span class="remove" *ngIf="index !== 0" (click)="remove('emailID',index)"> - </span>
+                </ng-container>
+              </ng-container>
+            </ng-container>
+            </div>
+
+            <div class="buttonwrapper mt-2">
+              <button class="btn btn-light me-2" (click)="clearFilter()">Clear</button>  
+            <button class="btn btn-light" (click)="applyFilter()">Apply</button>
+            </div>
+          </div>
+    </nav>
+  <div class="containers" *ngIf="userListFilter.length==0">
+    No Result Found
+  </div>
+
+  <div class="containers" *ngIf="userListFilter.length>0">
+    <table class="table w-75">
+      <tr>
+        <th>userName</th>
+        <th>Phone No</th>
+        <th>Email Id</th>
+        <th></th>
+      </tr>
+      <tr *ngFor="let i of userListFilter | slice : start : end;let index = index">
+        <td>{{ i.userName }}</td>
+        <td>{{ i.phoneNo }}</td>
+        <td>{{ i.emailID }}</td>
+        <td><button [routerLink]="['/user',getIndex(index)]">Select User</button></td>
+        <td><button (click)="deleteUser(index)">Delete User</button></td>
+      </tr>
+    </table>
+    <div class="Pagination">
+       <button *ngIf="checkPage(0)" (click)="onPageChange(0)">1</button> 
+       <span *ngIf="checkPage(0)">...</span>
+      <button
+        *ngFor="let i of pages;"
+        [ngClass]="activePage==i?'active':''"
+        (click)="onPageChange(i)"
+      >
+        {{i+1}}
+      </button>
+      <span *ngIf="checkPage(totalPages-1)">...</span>
+      <button *ngIf="checkPage(totalPages-1)" (click)="onPageChange(totalPages-1)">{{totalPages}}</button>
+    </div>
+</div>
+</main>
+
+
+
