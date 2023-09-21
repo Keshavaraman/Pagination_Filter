@@ -2,8 +2,9 @@
     <header><span [routerLink]="['/userList']"><img src="../../assets/images/arrow-left.svg"/></span> User Details</header>
     <div class="containers">
 
-        <div [formGroup]="userForm" *ngIf="updateView">
-        <div class="form-group">
+        <form [formGroup]="userForm" *ngIf="updateView" (ngSubmit)="updateUser()">
+        <div div class="alert alert-danger mt-3" *ngIf="!valideForm" role="alert">Please Enter Valid Details</div>
+            <div class="form-group">
             <label>UserName</label>
             <input class="form-control" formControlName="userName"/>
         </div>
@@ -15,9 +16,9 @@
             <label>Email ID</label>
             <input class="form-control" formControlName="emailID"/>
         </div>
-        <button class="btn btn-secondary" (click)="updateUser()">Update</button>
+        <button class="btn btn-secondary" type="submit" >Update</button>
         <button class="btn btn-secondary" (click)="toggleView()">Cancel</button>
-       </div>
+    </form>
        <div *ngIf="!updateView">
         <div>
             User Name : {{userDetails.userName}}
